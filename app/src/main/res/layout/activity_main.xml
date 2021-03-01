@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textViewRus"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Русское"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+    <EditText
+
+        android:id="@+id/editRus"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:inputType="text"
+
+        android:maxLines="1"
+
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/textViewRus"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewDeutsch"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:singleLine="true"
+        android:text="Немецкое"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRus" />
+
+    <EditText
+
+        android:id="@+id/editDeutsch"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="start"
+        android:inputType="text"
+        android:maxLines="1"
+        android:scrollbars="horizontal"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/textViewDeutsch"
+        app:layout_constraintTop_toBottomOf="@id/editRus">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewLessonId"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Урок №"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeutsch" />
+
+    <EditText
+
+        android:id="@+id/editLesson"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="start"
+        android:inputType="text"
+        android:maxLines="1"
+        android:scrollbars="vertical"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/textViewLessonId"
+        app:layout_constraintTop_toBottomOf="@id/editDeutsch">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonSendTask"
+        android:onClick="sendTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Отправить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLesson" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
