@@ -19,15 +19,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void sendTask(View view) {
+    public void sendTask(View view) throws InterruptedException {
         String rusString;
         String deutschString;
         int lesson;
-        rusString=((EditText)findViewById(R.id.editRus)).getText().toString();
-        deutschString=((EditText)findViewById(R.id.editDeutsch)).getText().toString();
-        lesson=Integer.parseInt(((EditText)findViewById(R.id.editLesson)).getText().toString());
-        String response = ConnectServer.connectToServerSearch("4:" + rusString + ":" + deutschString+":"+lesson);
-
+        rusString = ((EditText) findViewById(R.id.editRus)).getText().toString();
+        deutschString = ((EditText) findViewById(R.id.editDeutsch)).getText().toString();
+        lesson = Integer.parseInt(((EditText) findViewById(R.id.editLesson)).getText().toString());
+        String response = ConnectServer.connectToServerSearch("4:" + rusString + ":" + deutschString + ":" + lesson);
+        Thread.sleep(400);
         if (response.equals("false")) {
             Toast toast = Toast.makeText(this, "Ошибка!!! Данные не внесены", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Данные успешно внесены!!!", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
+            ((EditText) findViewById(R.id.editRus)).setText("");
+            ((EditText) findViewById(R.id.editDeutsch)).setText("");
+            ((EditText) findViewById(R.id.editLesson)).setText("");
         }
     }
 }

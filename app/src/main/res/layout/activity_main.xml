@@ -108,4 +108,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLesson" />
 
+    <TextView
+        android:id="@+id/textViewLessonUrl"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:singleLine="true"
+        android:text="URL"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSendTask" />
+
+    <EditText
+
+        android:id="@+id/editUrl"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="start"
+        android:inputType="text"
+        android:maxLines="1"
+        android:scrollbars="horizontal"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/textViewLessonUrl"
+        app:layout_constraintTop_toBottomOf="@id/buttonSendTask">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewLessonIdUrl"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="Урок №"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLessonUrl" />
+
+    <EditText
+
+        android:id="@+id/editLessonId"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="start"
+        android:inputType="text"
+        android:maxLines="1"
+        android:scrollbars="vertical"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/textViewLessonIdUrl"
+        app:layout_constraintTop_toBottomOf="@id/editUrl">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonSendLesson"
+        android:onClick="sendTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Отправить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLessonId" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
